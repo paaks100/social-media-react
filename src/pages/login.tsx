@@ -6,8 +6,10 @@ export const Login = () => {
     const navigate = useNavigate();
     
     const signInWithGoogle = async () => {
+        //result will contain Google user's information
         const result = await signInWithPopup(auth, provider);
-        console.log(result);
+
+        //navigate to home page after signin
         navigate("/")
     }
 

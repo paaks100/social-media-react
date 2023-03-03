@@ -22,7 +22,7 @@ export const Main = () => {
     
     useEffect(() => {
         getPosts()
-    }, [])
+    }, []) 
 
     return <div>{postsList?.map((post) => <Post post={post}/>)}</div>
 }
