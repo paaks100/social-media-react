@@ -34,10 +34,13 @@ export const CreateForm = () => {
         resolver: yupResolver(schema)
     })
 
+    //reference to our collection
     const postsRef = collection(db, "posts");
 
+    //onSubmit function for when a post is submitted
     const onCreatePost = async (data: CreateFormData) => {
         addDoc(postsRef, {
+            //...data refers to title and description which are already in CreateFormData interface
             ...data,
             username: user?.displayName,
             userId: user?.uid    
